@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>English by Ольга Юрьевна Никитина — Репетитор английского</title>
+  <meta name="description" content="Индивидуальные и груповые занятия английским. Теплая атмосфера, быстрый прогресс и любовь к языку." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --coffee-900: #3e261f;
+      --coffee-800: #523529;
+      --coffee-700: #6b4f3f;
+      --coffee-600: #8a604c;
+      --cream: #f6efe8;
+      --gold: #f2c879;
+      --accent: #ff7b6b; /* тёплый яркий акцент */
+      --glass: rgba(255,255,255,0.06);
+      --radius: 18px;
+      --shadow: 0 8px 30px rgba(45,30,24,0.25);
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background: radial-gradient(1200px 600px at 10% 10%, rgba(242,200,121,0.06), transparent 6%),
+                  linear-gradient(180deg, var(--cream), #fff 40%);
+      color:var(--coffee-900);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      padding:32px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+    .card{
+      width:100%;
+      max-width:1100px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.85), rgba(255,255,255,0.95));
+      border-radius:calc(var(--radius) + 6px);
+      box-shadow:var(--shadow);
+      overflow:hidden;
+      display:grid;
+      grid-template-columns: 420px 1fr;
+      gap:0;
+      border:1px solid rgba(98,58,44,0.06);
+    }
+    /* LEFT - profile */
+    .left{
+      padding:40px;
+      background: linear-gradient(135deg, var(--coffee-700), var(--coffee-600));
+      color:var(--cream);
+      display:flex;
+      flex-direction:column;
+      gap:22px;
+      align-items:flex-start;
+      justify-content:center;
+    }
+    .avatar{
+      width:120px;height:120px;border-radius:18px;overflow:hidden;border:4px solid rgba(255,255,255,0.12);
+      display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg, rgba(255,255,255,0.04), rgba(0,0,0,0.06));
+      box-shadow:0 6px 18px rgba(0,0,0,0.18);
+    }
+    .avatar svg{width:100%;height:100%;filter:drop-shadow(0 6px 18px rgba(0,0,0,0.25));}
+    h1{font-size:28px;margin:0 0 6px 0;line-height:1.05}
+    .role{opacity:0.95;font-weight:600}
+    .tagline{font-size:14px;opacity:0.9;max-width:260px}
+    .stats{display:flex;gap:12px;margin-top:8px}
+    .stat{background:rgba(255,255,255,0.06);padding:8px 12px;border-radius:12px;font-weight:600;font-size:13px}
+    .cta-column{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
+    .btn{
+      padding:12px 18px;border-radius:12px;border:0;cursor:pointer;font-weight:700;letter-spacing:0.2px
+    }
+    .btn-primary{background:var(--gold);color:var(--coffee-900)}
+    .btn-outline{background:transparent;color:var(--cream);border:1px solid rgba(255,255,255,0.14)}
+    .contact-line{display:flex;gap:10px;align-items:center;margin-top:8px;font-size:14px}
+    .pill{background:rgba(255,255,255,0.06);padding:8px 10px;border-radius:10px}
+
+    /* RIGHT - content */
+    .right{padding:40px;background:linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.5));}
+    .nav{display:flex;justify-content:flex-end;gap:12px;margin-bottom:6px}
+    .nav a{font-weight:600;color:var(--coffee-800);text-decoration:none}
+    .hero{display:flex;gap:28px;align-items:center}
+    .hero h2{margin:0;font-size:24px}
+    .hero p{margin:6px 0 0 0;color:var(--coffee-700);opacity:0.95}
+
+    .services{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:22px}
+    .service{background:var(--cream);border-radius:12px;padding:14px;box-shadow:0 6px 18px rgba(106,69,57,0.06);}
+    .service h3{margin:0 0 6px 0;color:var(--coffee-900);font-size:15px}
+    .service p{margin:0;font-size:13px;color:var(--coffee-700)}
+
+    .about{margin-top:24px;display:flex;gap:20px;align-items:flex-start}
+    .about p{margin:0;color:var(--coffee-700)}
+
+    .footer{margin-top:28px;display:flex;justify-content:space-between;align-items:center;gap:12px}
+    .socials{display:flex;gap:10px}
+    .social{padding:9px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.4));box-shadow:0 6px 14px rgba(0,0,0,0.06);}
+
+    /* contact form */
+    .contact-form{margin-top:12px;display:flex;gap:8px;align-items:center}
+    input[type="email"],input[type="text"]{padding:12px;border-radius:12px;border:1px solid rgba(98,58,44,0.08);width:220px}
+
+    /* responsive */
+    @media (max-width:980px){
+      .card{grid-template-columns:1fr;max-width:920px}
+      .left{order:2}
+      .right{order:1}
+      .services{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:560px){
+      body{padding:18px}
+      .services{grid-template-columns:1fr}
+      input[type="email"],input[type="text"]{width:140px}
+      .avatar{width:96px;height:96px}
+    }
+
+    /* small animations */
+    .btn-primary:hover{transform:translateY(-3px);transition:all 180ms ease}
+    .btn-outline:hover{transform:translateY(-3px);opacity:0.95}
+    .service{transition:transform 200ms ease, box-shadow 200ms ease}
+    .service:hover{transform:translateY(-6px);box-shadow:0 14px 40px rgba(106,69,57,0.12)}
+  </style>
+</head>
+<body>
+  <main class="card" role="main" aria-label="Визитка репетитора английского">
+    <section class="left" aria-labelledby="profile-name">
+      <div style="display:flex;gap:14px;align-items:center;">
+        <div class="avatar" aria-hidden="true">
+          <!-- simple friendly avatar SVG placeholder -->
+          <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect width="120" height="120" rx="16" fill="url(#g)" />
+            <defs>
+              <linearGradient id="g" x1="0" x2="1">
+                <stop offset="0" stop-color="#f2c879" />
+                <stop offset="1" stop-color="#ff7b6b" />
+              </linearGradient>
+            </defs>
+            <g transform="translate(12,14)" fill="#fff">
+              <circle cx="36" cy="28" r="22" opacity="0.95" />
+              <rect x="6" y="64" width="60" height="12" rx="6" opacity="0.9" />
+              <path d="M12 52c6-10 48-10 54 0v8H12z" opacity="0.06" fill="#000" />
+            </g>
+          </svg>
+        </div>
+        <div>
+          <h1 id="profile-name">Ольга Юрьевна Никитина</h1>
+          <div class="role">Репетитор английского — индивидуально и в мини-группах</div>
+          <div class="tagline">Дружелюбный подход, разговорная практика, подготовка к экзаменам и путешествиям.</div>
+        </div>
+      </div>
+
+      <div class="stats" role="list">
+        <div class="stat" role="listitem">Опыт: 20+ лет</div>
+        <div class="stat" role="listitem">Возраст: от 6 до взрослых</div>
+        <div class="stat" role="listitem">Онлайн / офлайн</div>
+      </div>
+
+      <div class="cta-column">
+        <button class="btn btn-primary" onclick="location.href='#contact'">Записаться на пробное</button>
+        <button class="btn btn-outline" onclick="window.open('mailto:youremail@example.com')">Написать на почту</button>
+      </div>
+
+      <div class="contact-line">
+        <div class="pill">📞 +7 (926) 253-73-03</div>
+        <div class="pill">🌍 Онлайн — Zoom </div>
+      </div>
+
+      <div style="margin-top:12px;font-size:13px;opacity:0.95;">Первое занятие — 20 минут бесплатно.</div>
+    </section>
+
+    <section class="right">
+      <nav class="nav" aria-label="Навигация">
+        <a href="#services">Услуги</a>
+        <a href="#about">Обо мне</a>
+        <a href="#contact">Контакты</a>
+      </nav>
+
+      <div class="hero">
+        <div style="flex:1">
+          <h2>Сделаем английский простым и живым</h2>
+          <p>Тёплые уроки в кофейной атмосфере: разговорная практика, грамматика через игры и реальные темы, уверенность в речи.</p>
+
+          <div class="services" id="services" aria-labelledby="services-title">
+            <article class="service">
+              <h3>Индивидуальные занятия</h3>
+              <p>Персональная программа под ваши цели: разговор, экзамены, работа и путешествия.</p>
+            </article>
+            <article class="service">
+              <h3>Мини-группы</h3>
+              <p>Малые группы — больше разговорной практики и живого общения.</p>
+            </article>
+            <article class="service">
+              <h3>Курсы по подготовке</h3>
+              <p>Подготовка к ОГЭ: техника, стратегия и тренировка.</p>
+            </article>
+          </div>
+
+          <div class="about" id="about">
+            <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='84' height='84'><rect rx='12' width='84' height='84' fill='%23f6efe8'/><text x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' font-family='Inter, Arial' font-size='22' fill='%236b4f3f'>A+</text></svg>" alt="Иконка качества" style="border-radius:12px;" />
+            <div>
+              <p><strong>Обо мне:</strong> Я — Никитина Ольга Юрьевна, люблю создавать уютную атмосферу, где ученик чувствует себя уверенно. Использую коммуникативный подход, элементы геймификации и реальные материалы.</p>
+              <p style="margin-top:8px;">Методика подходит детям и взрослым. Уроки можно адаптировать по длительности и интенсивности.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <aside style="width:260px;display:flex;flex-direction:column;gap:12px;align-items:stretch;">
+          <div style="background:var(--coffee-700);color:var(--cream);padding:14px;border-radius:12px;box-shadow:0 8px 26px rgba(106,69,57,0.08);">
+            <strong>Акция:</strong>
+            <div style="margin-top:6px;">Подарочный набор: 4 занятия по цене 3 — до конца месяца.</div>
+          </div>
+
+          <div style="background:linear-gradient(180deg,var(--cream),#fff);padding:12px;border-radius:12px;">
+            <div style="font-weight:700;margin-bottom:8px">Отзывы</div>
+            <div style="font-size:13px;color:var(--coffee-700);">"Уроки помогли моему ребёнку заговорить — спасибо!" — Марина</div>
+          </div>
+
+          <div id="contact">
+            <form class="contact-form" onsubmit="event.preventDefault(); sendDemo();">
+              <input type="text" id="name" placeholder="Имя" required />
+              <input type="email" id="email" placeholder="Email" required />
+              <div style="display:flex;gap:8px;margin-top:8px">
+                <button class="btn btn-primary" type="submit">Записаться</button>
+                <button class="btn btn-outline" type="button" onclick="location.href='tel:+79262537303'">Позвонить</button>
+              </div>
+            </form>
+          </div>
+        </aside>
+      </div>
+
+      <div class="footer">
+        <div>© <strong>[Ольга Юрьевна Никитина]</strong> — Репетитор английского</div>
+        <div class="socials" aria-hidden="true">
+          <div class="social">Telegram</div>
+          <div class="social">WhatsApp</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    function sendDemo(){
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      if(!name||!email) return alert('Пожалуйста, заполните имя и email.');
+      const subject = encodeURIComponent('Запись на пробное занятие');
+      const body = encodeURIComponent('Имя: '+name+'\nEmail: '+email+'\nИнтересуют пробные занятия.');
+      window.location.href = 'mailto:youremail@example.com?subject='+subject+'&body='+body;
+    }
+  </script>
+</body>
+</html>
